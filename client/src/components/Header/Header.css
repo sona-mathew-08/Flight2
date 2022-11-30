@@ -1,0 +1,39 @@
+.header{
+    height:100px;
+    background-color: var(--mainColor);
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.header .link {
+	/* margin: 0 1rem; */
+	color: var(--mainColor);
+	text-decoration: none;
+    font-family: sans-serif;
+    transition: font-size 0.75s;
+}
+
+.header .link:hover {
+    
+	font-size: 18px;
+}
+.header h4{
+	padding-left: 6px;
+}
+.book,.check-booked{
+	background:#fff;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	margin-bottom: 30px;
+	
+}
+.book{
+	border-radius: 20px 0 0 20px;
+}
+.check-booked{
+	
+	border-radius: 0 20px  20px 0;
+	
+}
