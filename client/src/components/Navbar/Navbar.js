@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Navbar.css'
 import Logo from "../../images/logo.png"
 import {Link} from 'react-router-dom'
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { AuthContext } from '../../context/authContext';
 
 const Navbar = () => {
+
+    const {currentUser} = useContext(AuthContext);
 
     const navRef = useRef();
 
@@ -29,12 +32,11 @@ const Navbar = () => {
                 <Link className='link'>
                     <h4>Partners</h4>
                 </Link>
-                <Link className='link' to="/register">
-                    <h4>Register</h4>
-                </Link>
-                <Link className='link' to="/login">
-                    <h4>Login</h4>
-                </Link>
+                    <h4 className='link'>{currentUser?.username}</h4>
+                
+                
+                   {currentUser ? <h4 onClick={logout} className="link">Logout</h4>:<Link className='link' to="/login"></Link>} 
+                
                 {/*<button className='nav-button'>Register</button>
     <button className='nav-button'>Login</button>*/}
 				<button
